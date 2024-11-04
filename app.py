@@ -17,6 +17,7 @@ def home():
 
 @app.route('/diary', methods=['GET'])
 def show_diary():
+
     articles = list(db.diary.find({}, {'_id': False}))
     return jsonify({'articles': articles})
 
